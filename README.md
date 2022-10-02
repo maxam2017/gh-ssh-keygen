@@ -1,20 +1,20 @@
 # gh-ssh-keygen
 Adding a new SSH key to your GitHub account automatically. (MacOS only)
 
-## Install
+## Install (on MacOS)
 
 ```sh
-$ /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/maxam2017/gh-ssh-keygen/HEAD/install.sh)"
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/maxam2017/gh-ssh-keygen/HEAD/install.sh)"
 ```
 
 ## Usage
 ```sh
-$ gh-ssh-keygen
+gh-ssh-keygen
 ````
 
 or use once (without installation)
 ```sh
-$ /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/maxam2017/gh-ssh-keygen/HEAD/gh-ssh-keygen.sh)"
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/maxam2017/gh-ssh-keygen/HEAD/gh-ssh-keygen.sh)"
 ```
 
 ## manual

@@ -1,5 +1,5 @@
 #!/bin/bash
-VERSION="0.0.2"
+VERSION="0.0.3"
 
 ################################################################################
 # ASCII                                                                        #
@@ -89,9 +89,12 @@ if [ $? -ne 0 ];then
         echo -e "${Purple}>${Reset} ${Dim}Let's install install from internet...${Reset}"
         echo
         /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+        echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> ~/.zprofile
+        eval "$(/opt/homebrew/bin/brew shellenv)"
     fi
 
     brew install gh
+    clear
 fi
 
 # get email

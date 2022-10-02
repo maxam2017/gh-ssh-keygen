@@ -17,7 +17,7 @@ or use once (without installation)
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/maxam2017/gh-ssh-keygen/HEAD/gh-ssh-keygen.sh)"
 ```
 
-## manual
+## Manual
 
 ```
 NAME
@@ -40,6 +40,12 @@ ENVIRONMENT
 
 AUTHOR
      maxam2017 🦕
+```
+
+## Uninstall
+
+```sh
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/maxam2017/gh-ssh-keygen/HEAD/uninstall.sh)"
 ```
 
 ## License

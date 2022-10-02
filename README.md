@@ -17,6 +17,10 @@ or use once (without installation)
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/maxam2017/gh-ssh-keygen/HEAD/gh-ssh-keygen.sh)"
 ```
 
+## Demo
+
+https://user-images.githubusercontent.com/25841814/193447268-fd6e5e28-2e26-48f3-bd90-9c330bbd510a.mp4
+
 ## Manual
 
 ```

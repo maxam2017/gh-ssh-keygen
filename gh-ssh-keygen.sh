@@ -89,8 +89,37 @@ if [ $? -ne 0 ];then
         echo -e "${Purple}>${Reset} ${Dim}Let's install install from internet...${Reset}"
         echo
         /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-        echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> ~/.zprofile
-        eval "$(/opt/homebrew/bin/brew shellenv)"
+
+        case "${SHELL}" in
+            */bash*)
+                if [[ -r "${HOME}/.bash_profile" ]]
+                then
+                shell_profile="${HOME}/.bash_profile"
+                else
+                shell_profile="${HOME}/.profile"
+                fi
+                ;;
+            */zsh*)
+                shell_profile="${HOME}/.zprofile"
+                ;;
+            *)
+                shell_profile="${HOME}/.profile"
+                ;;
+        esac
+
+        # https://github.com/Homebrew/install/blob/master/install.sh
+        UNAME_MACHINE="$(/usr/bin/uname -m)"
+        if [[ "${UNAME_MACHINE}" == "arm64" ]]
+        then
+            # On ARM macOS, this script installs to /opt/homebrew only
+            HOMEBREW_PREFIX="/opt/homebrew"
+        else
+            # On Intel macOS, this script installs to /usr/local only
+            HOMEBREW_PREFIX="/usr/local"
+        fi
+
+        echo 'eval "$($HOMEBREW_PREFIX/bin/brew shellenv)"' >> ~/.zprofile
+        eval "$($HOMEBREW_PREFIX/bin/brew shellenv)"
     fi
 
     brew install gh

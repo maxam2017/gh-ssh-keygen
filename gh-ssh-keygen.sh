@@ -1,5 +1,5 @@
 #!/bin/bash
-VERSION="0.0.1"
+VERSION="0.0.2"
 
 ################################################################################
 # ASCII                                                                        #
@@ -119,7 +119,7 @@ fi
 # generate ssh key
 echo
 echo -e "${Purple}>${Reset} Generating ssh key for \"$GH_MAIL\"..."
-ssh-keygen -t ed25519 -C "$GH_MAIL" -f ~/.ssh/id_ed25519 -y
+ssh-keygen -t ed25519 -C "$GH_MAIL" -f ~/.ssh/id_ed25519
 
 # add ssh key to ssh-agent
 echo

@@ -1,5 +1,5 @@
 # gh-ssh-keygen
-Adding a new SSH key to your GitHub account automatically. (MacOS only)
+![banner](https://user-images.githubusercontent.com/25841814/193448112-34771b2c-b6db-493e-a6f4-b5e6466e496e.png)
 
 ## Install (on MacOS)
 

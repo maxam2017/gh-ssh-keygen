@@ -79,7 +79,8 @@ if [ $? -ne 0 ];then
 fi
 
 # get email
-if [ ! $(git config --global user.email) ]; then
+GH_MAIL=$(git config --global user.email)
+if [ ! $GH_MAIL ]; then
     echo -e "${Red}!${Reset} ${Dim}We can't find your GitHub email address in global git config.${Reset}"
 
     while true; do
@@ -94,6 +95,9 @@ if [ ! $(git config --global user.email) ]; then
             break
         fi
     done
+else
+    echo -e "${Purple}>${Reset} Your GitHub email address \"$GH_MAIL\" was found in global git config.${Reset}"
+    echo -e "${Purple}>${Reset} Directly use for ssh key generation...${Reset}"
 fi
 
 # generate ssh key

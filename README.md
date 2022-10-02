@@ -23,17 +23,22 @@ or use once (without installation)
 NAME
      gh-ssh-keygen 🔑 - adding a new SSH key to your GitHub account automatically
 
+VERSION
+     0.0.1
+
 SYNOPSIS
-     gh-ssh-keygen [-h]
+     gh-ssh-keygen [-hv]
 
 DESCRIPTION
      Want to enable authentication for Git operations over SSH?
      This script helps you generate a SSH key on your local machine and add the key to your account on GitHub.com.
      See more detail on GitHub official document - https://docs.github.com/en/authentication/connecting-to-github-with-ssh
 
+
      The following options are available:
 
-     -h     Print this Help.
+     -h     show this message
+     -v     get the version
 
 ENVIRONMENT
      Currently only works on MacOS.

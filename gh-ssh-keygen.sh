@@ -1,4 +1,5 @@
 #!/bin/bash
+VERSION="0.0.1"
 
 ################################################################################
 # ASCII                                                                        #
@@ -26,8 +27,12 @@ help()
    echo "     gh-ssh-keygen 🔑 - adding a new SSH key to your GitHub account automatically"
    echo
 
+   echo_bright "VERSION"
+   echo "     $(get_version)"
+   echo
+
    echo_bright "SYNOPSIS"
-   echo "     gh-ssh-keygen [-h]"
+   echo "     gh-ssh-keygen [-hv]"
    echo
 
    echo_bright "DESCRIPTION"
@@ -39,7 +44,8 @@ help()
 
    echo "     The following options are available:"
    echo
-   echo "     -h     Print this Help."
+   echo "     -h     show this message"
+   echo "     -v     get the version"
    echo
 
    echo_bright "ENVIRONMENT"
@@ -51,12 +57,22 @@ help()
    echo
 }
 
-while getopts ":h" option; do
-   case $option in
-      h)
-         help
-         exit;;
-   esac
+################################################################################
+# version                                                                      #
+################################################################################
+get_version() {
+    echo $VERSION
+}
+
+while getopts ":hv" option; do
+    case $option in
+        h)
+            help
+            exit;;
+        v)
+            get_version
+            exit;;
+    esac
 done
 
 # install gh (if not exist)
